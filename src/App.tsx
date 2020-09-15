@@ -40,7 +40,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-      fetch('http://localhost:6942/runs/')
+      fetch('/runs/')
           .then(res => res.json())
           .then((data) => {
               this.setState({ catalogs: data })

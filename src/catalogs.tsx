@@ -45,7 +45,7 @@ class CatalogsPage extends React.Component<Props, IState> {
     }
 
     componentDidMount() {
-        fetch('http://localhost:6942/runs/')
+        fetch('/runs/')
             .then(res => res.json())
             .then((data) => {
                 this.setState({ catalogs: data })

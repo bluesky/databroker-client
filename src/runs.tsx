@@ -55,7 +55,7 @@ class RunsPage extends React.Component<Props, IState> {
     }
 
     componentDidMount() {
-        var catalogUrl = "http://localhost:6942/runs/" + this.props.match.params.id;
+        var catalogUrl = "/runs/" + this.props.match.params.id;
         fetch(catalogUrl)
             .then(res => res.json())
             .then((data) => {
