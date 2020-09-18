@@ -88,7 +88,7 @@ class RunsPage extends React.Component<Props & IProps, IState> {
     }
 
     componentDidMount() {
-        var catalogUrl = "/runs/" + this.props.match.params.id;
+        var catalogUrl = "/db/runs/" + this.props.match.params.id;
         fetch(catalogUrl)
             .then(res => res.json())
             .then((data) => {

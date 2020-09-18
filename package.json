@@ -7,6 +7,7 @@
     "@material-ui/icons": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "http-proxy-middleware": "^1.0.5",
     "react": "latest",
     "react-dom": "latest",
     "react-router-dom": "latest",
@@ -19,7 +20,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:6942",
   "browserslist": {
     "production": [
       ">0.2%",
