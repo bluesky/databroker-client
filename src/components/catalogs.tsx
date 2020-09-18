@@ -20,7 +20,7 @@ const Catalogs: React.FunctionComponent<IProps> = (props) => {
             <ul>
             {props.catalogs.map(catalog => (
                         <li key={catalog.name}>
-                            <Link color="inherit" component={RouterLink} to={"/runs/" + catalog.name}>{catalog.name}</Link>
+                            <Link color="inherit" component={RouterLink} to={`/runs/${catalog.name}`}>{catalog.name}</Link>
                         </li>
             ))}
             </ul>
