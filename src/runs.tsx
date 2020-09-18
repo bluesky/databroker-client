@@ -60,7 +60,7 @@ class RunsPage extends React.Component<Props & IProps, IState> {
             <CardActionArea>
               <CardMedia
                 className={classes.media}
-                image={"/previews/" + catalog.uid}
+                image={`/db/previews/${catalog.uid}`}
                 title="Run preview"
               />
               <CardContent>
@@ -76,7 +76,7 @@ class RunsPage extends React.Component<Props & IProps, IState> {
               <Button size="small" color="primary" >
                 Share
               </Button>
-              <Button size="small" color="primary" component={RouterLink} to={"/runs/" + this.props.match.params.id + "/" + catalog.uid}>
+              <Button size="small" color="primary" component={RouterLink} to={`/runs/${this.props.match.params.id}/${catalog.uid}`}>
                 More detail
               </Button>
             </CardActions>
@@ -88,7 +88,7 @@ class RunsPage extends React.Component<Props & IProps, IState> {
     }
 
     componentDidMount() {
-        var catalogUrl = "/db/runs/" + this.props.match.params.id;
+        var catalogUrl = `/db/runs/${this.props.match.params.id}`;
         fetch(catalogUrl)
             .then(res => res.json())
             .then((data) => {

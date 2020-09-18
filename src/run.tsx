@@ -61,7 +61,7 @@ class RunPage extends React.Component<Props, IState> {
     }
 
     componentDidMount() {
-        var catalogUrl = "/db/runs/" + this.props.match.params.id + "/" + this.props.match.params.uid;
+        var catalogUrl = `/db/runs/${this.props.match.params.id}/${this.props.match.params.uid}`;
         fetch(catalogUrl)
             .then(res => res.json())
             .then((data) => {
