@@ -31,7 +31,10 @@ const useStyles = (theme: Theme) => ({
 export interface IProps extends WithStyles<typeof useStyles> {}
 
 interface ICatalog {
-    uid: string
+    uid: string;
+    scan_id: number;
+    timestamp: number;
+    plan_name: string;
 }
 interface IState {
     catalogs: Array<ICatalog>;
@@ -49,6 +52,11 @@ class RunsPage extends React.Component<Props & IProps, IState> {
         };
     }
 
+    formatDate(timestamp: number) {
+      var dt = new Date(timestamp * 1000);
+      return `${dt.getFullYear()}-${dt.getMonth()+1}-${dt.getDate()}`;
+    }
+
     render() {
         const { classes } = this.props;
         return (
@@ -64,11 +72,13 @@ class RunsPage extends React.Component<Props & IProps, IState> {
                 title="Run preview"
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="h3">
-                  {catalog.uid}
+                <Typography gutterBottom variant="h5" component="h4">
+                  {catalog.plan_name}
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Maybe scan notes, summary of the scan?
+                  Scan ID: {catalog.scan_id} <br/>
+                  UID: {catalog.uid.substr(0, 8)} <br/>
+                  Date: {this.formatDate(catalog.timestamp)}
                 </Typography>
               </CardContent>
             </CardActionArea>
